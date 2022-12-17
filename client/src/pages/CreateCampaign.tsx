@@ -18,7 +18,7 @@ export interface FormType {
 const CreateCampaign = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const { createCampaign } = useStateContext();
+  const { createCampaign, address } = useStateContext();
   const [form, setForm] = useState<FormType>({
     name: "",
     title: "",
@@ -126,13 +126,16 @@ const CreateCampaign = () => {
           value={form.image}
           handleChange={(e) => handleFormFieldChange("image", e)}
         />
-        <div className="flex justify-center items-center mt-[40px]">
+        <div className="flex justify-center items-center mt-[40px] flex-col">
           <CustomButton
             btnType="submit"
             title="Submit new campaign"
-            styles="bg-[#1dc071]"
-            handleClick={() => {}}
+            styles="bg-[#1dc071] disabled:bg-[#3a3a3a] disabled:text-[#808191]"
+            disabled={!!!address}
           />
+          {!address && (
+            <p className="text-white mt-[10px]">Please connect a wallet</p>
+          )}
         </div>
       </form>
     </div>

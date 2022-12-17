@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { thirdweb } from "../assets";
+import { thirdweb, user } from "../assets";
 import { CountBox, CustomButton, Loader } from "../components";
 import { DonatorsType, ParseCampaignType, useStateContext } from "../context";
 import { calculateBarPercentage, daysLeft } from "../utils";
@@ -80,7 +80,7 @@ const CampaignDetails = () => {
             <div className="flex mt-[20px] flex-row items-center flex-wrap gap-[14px]">
               <div className="flex w-[52px] h-[52px] items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer">
                 <img
-                  src={thirdweb}
+                  src={user}
                   alt="user"
                   className="w-[60%] h-[60%] object-contain"
                 />

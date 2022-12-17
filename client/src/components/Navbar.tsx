@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { logo, menu, search, thirdweb } from "../assets";
+import { icon, logo, menu, search, thirdweb, user } from "../assets";
 import { navlinks } from "../constants";
 import { useStateContext } from "../context";
 import CustomButton from "./CustomButton";
@@ -68,7 +68,7 @@ const Navbar = () => {
         <Link to="/profile">
           <div className="w-[52px] h-[52px] rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer ">
             <img
-              src={thirdweb}
+              src={user}
               alt="user"
               className="w-[60%] h-[60%] object-contain"
             />
@@ -78,7 +78,7 @@ const Navbar = () => {
       <div className="sm:hidden flex justify-between items-center relative">
         <div className="w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer ">
           <img
-            src={logo}
+            src={icon}
             alt="user"
             className="w-[60%] h-[60%] object-contain"
           />
